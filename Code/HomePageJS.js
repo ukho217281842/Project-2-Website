@@ -1,3 +1,4 @@
+//Temp data
 const data = [
   {
     name: "Bursary1",
@@ -49,6 +50,7 @@ const data = [
 
 ];
 
+//Search bar keyup function that uses jquery
 $("#SearchBar").keyup(function() {
 
   var filter = $(this).val(),
@@ -64,6 +66,7 @@ $("#SearchBar").keyup(function() {
   });
 });
 
+//Creation of card divs function
 function cardTemplate(card){
   return `
 
@@ -78,7 +81,7 @@ function cardTemplate(card){
   `
 }
 
-
+//Cycles threw all the data and runs cardTemplate to create a card for each of the data objects
 document.getElementById("cards").innerHTML = `
 <h1 class="card-title">Cards (${data.length} results)</h1>
 ${data.map(cardTemplate).join("")}
