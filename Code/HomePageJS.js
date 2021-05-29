@@ -58,9 +58,9 @@ $("#SearchBar").keyup(function() {
 
   $('#cards div').each(function() {
     if ($(this).text().search(new RegExp(filter, "i")) < 0) {
-      $(this).hide();  
+      $(this).animate( { "opacity": "hide", top:"100"} , 500 );  
     } else {
-      $(this).show(); 
+      $(this).animate( { "opacity": "show", top:"100"} , 500 ); 
       count++;
     }
   });
@@ -86,5 +86,9 @@ document.getElementById("cards").innerHTML = `
 <h1 class="card-title">Cards (${data.length} results)</h1>
 ${data.map(cardTemplate).join("")}
 
+<center>
 <p>These ${data.length} bursarys were added recently</p>
+</center>
 `
+
+
