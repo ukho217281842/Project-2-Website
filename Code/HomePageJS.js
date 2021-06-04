@@ -70,23 +70,24 @@ $("#SearchBar").keyup(function() {
 
 //Creation of card divs function
 function cardTemplate(card){
-  return `
 
-  <div class="col-sm-4" id="card-style">
-  <center>
-  <a href="something.html">
-  <img src="${card.photo}" class="card-photo"><br>
-  </a>
-  <p><a>${card.tag}</a><br>${card.description}</p>
+   return`
 
-  </center>
-  </div>
-  `
+   <div class="col-sm-4">
+   <div class="card">
+   <div class="card-content">
+   <h3 class="card-title">${card.tag}</h3>
+   <p class="card-body">${card.description}</p>
+     <a href="#" class="button">Go to page</a>
+   </div>
+ </div>
+   </div>
+   `
 }
 
 //Cycles threw all the data and runs cardTemplate to create a card for each of the data objects
 document.getElementById("cards").innerHTML = `
-<h1 class="card-title">Cards (${data.length} results)</h1>
+<div class="col-md-12"><h1 class="card-title">Cards (${data.length} results)</h1></div>
 ${data.map(cardTemplate).join("")}
 
 <center>
