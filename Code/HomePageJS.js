@@ -74,7 +74,7 @@ function cardTemplate(card){
    return`
 
    <div class="col-sm-4">
-   <div class="card">
+   <div class="card" style="background-image: url('../Resources/Placeholder.png');">
    <div class="card-content">
    <h3 class="card-title">${card.tag}</h3>
    <p class="card-body">${card.description}</p>
